@@ -163,6 +163,8 @@ int main(int argc, char* argv[]) {
 				cout << "4.Quitter" << endl;
 				cout << "votre choix:";
 				cin >> choixtt;
+				cin.clear();
+				cin.ignore(numeric_limits<streamsize>::max(), '\n');
 				switch (choixtt) {
 				case 4: return 0;
 				case 1: {
@@ -189,6 +191,11 @@ int main(int argc, char* argv[]) {
 				case 3: {
 					p->resolution();
 					return 0;
+				}
+				default:
+				{
+					cout << "Commande invalide" << endl;
+					break;
 				}
 				}
 			}
