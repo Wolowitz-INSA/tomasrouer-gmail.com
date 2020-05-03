@@ -1,7 +1,9 @@
 #include <iostream>
 #include "PbTSP.hpp"
 #include "PbTriTopologique.hpp"
+#include <limits>
 using namespace std;
+
 
 void grapheManipulation(Graphe* g)
 {
@@ -19,6 +21,8 @@ void grapheManipulation(Graphe* g)
 		cout << "9.Quitter" << endl;
 		cout << "votre choix:";
 		cin >> choix2;
+		cin.clear();
+		cin.ignore(numeric_limits<streamsize>::max(), '\n');
 		switch (choix2) {
 		case 9: break;
 		case 1: {
@@ -109,6 +113,11 @@ void grapheManipulation(Graphe* g)
 			}
 			break;
 		}
+		default:
+		{
+			cout << "Commande invalide" << endl;
+			break;
+		}
 		}
 	}
 
@@ -126,6 +135,8 @@ int main(int argc, char* argv[]) {
 		cout << "5.Quitter" << endl;
 		cout << "votre choix:";
 		cin >> choix1;
+		cin.clear();
+		cin.ignore(numeric_limits<streamsize>::max(), '\n');
 		switch (choix1) {
 		case 5: return 0;
 		case 1: 
@@ -211,6 +222,11 @@ int main(int argc, char* argv[]) {
 			p->setVilleDepart(ville);
 			p->resolution(ville);
 			cout << "la longeur du chemin plus court est " << p->resultat << endl;
+		}
+		default:
+		{
+			cout << "Commande invalide" << endl;
+			break;
 		}
 		}
 	}
