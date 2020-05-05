@@ -23,7 +23,7 @@ void grapheManipulation(Graphe* g)
 		cout << "4.Supprimer un arc" << endl;
 		cout << "5.Determinier la connexite" << endl;
 		cout << "6.Afficher le graphe" << endl;
-		cout << "7.Calculer nombre d'antecedantes d'un sommet" << endl;
+		cout << "7.Calculer nombre d'antecedents d'un sommet" << endl;
 		cout << "8.Afficher les ajacents d'un sommet" << endl;
 		cout << "9.Quitter" << endl;
 		cout << "votre choix:";
@@ -42,28 +42,34 @@ void grapheManipulation(Graphe* g)
 		}
 		case 2:
 		{
-			for (int i = 0;i < g->sommetS.size();i++)
-				cout << i + 1 << g->sommetS[i].getPresentation() << endl;
-			cout << "Quel sommet? (Mettez l'entier avant le nom du sommet)";
-			int sas;
-			cin >> sas;
-			g->supprimerSommet(sas);
+			if (g->sommetS.size() > 0) {
+				for (int i = 0;i < g->sommetS.size();i++)
+					cout << i + 1 << g->sommetS[i].getPresentation() << endl;
+				cout << "Quel sommet? (Mettez l'entier avant le nom du sommet)";
+				int sas;
+				cin >> sas;
+				g->supprimerSommet(sas);
+			}
+			else cout << "Il n'y a pas de sommet" << endl;
 			break;
 		}
 		case 3:
 		{
 			int s1, s2,l;
-			for (int i = 0;i < g->sommetS.size();i++)
-				cout << i + 1 << g->sommetS[i].getPresentation() << endl;
-			cout << "Premier sommet? (Mettez l'entier avant le nom du sommet)";
-			cin >> s1;
-			cout << "Deuxieme sommet? (Mettez l'entier avant le nom du sommet)";
-			cin >> s2;
-			cout << "longeur de l'arc ?";
-			cin >> l;
-			if (s1 > g->sommetS.size() || s2 > g->sommetS.size())
-				cout << "ERREUR" << endl;
-			else g->ajouterArc(g->sommetS[s1 - 1], g->sommetS[s2 - 1], l);
+			if (g->sommetS.size() > 0) {
+				for (int i = 0;i < g->sommetS.size();i++)
+					cout << i + 1 << g->sommetS[i].getPresentation() << endl;
+				cout << "Premier sommet? (Mettez l'entier avant le nom du sommet)";
+				cin >> s1;
+				cout << "Deuxieme sommet? (Mettez l'entier avant le nom du sommet)";
+				cin >> s2;
+				cout << "longeur de l'arc ?";
+				cin >> l;
+				if (s1 > g->sommetS.size() || s2 > g->sommetS.size())
+					cout << "ERREUR" << endl;
+				else g->ajouterArc(g->sommetS[s1 - 1], g->sommetS[s2 - 1], l);
+			}
+			else cout << "Il n'y a pas de sommet" << endl;
 			break;
 		}
 		case 4:
@@ -91,33 +97,39 @@ void grapheManipulation(Graphe* g)
 		}
 		case 7:
 		{
-			for (int i = 0;i < g->sommetS.size();i++)
-				cout << i + 1 << g->sommetS[i].getPresentation() << endl;
-			cout << "Quel sommet?(Mettez l'entier avant le nom du sommet)";
-			int s;
-			cin >> s;
-			if (s > g->sommetS.size())
-				cout << "ERREUR" << endl;
-			else cout << "nombre atcd :" << g->nbAtcd(g->sommetS[s - 1])<<endl;
+			if (g->sommetS.size() > 0) {
+				for (int i = 0;i < g->sommetS.size();i++)
+					cout << i + 1 << g->sommetS[i].getPresentation() << endl;
+				cout << "Quel sommet?(Mettez l'entier avant le nom du sommet)";
+				int s;
+				cin >> s;
+				if (s > g->sommetS.size())
+					cout << "ERREUR" << endl;
+				else cout << "nombre atcd :" << g->nbAtcd(g->sommetS[s - 1]) << endl;
+			}
+			else cout << "Il n'y a pas de sommet" << endl;
 			break;
 		}
 		case 8:
 		{
-			for (int i = 0;i < g->sommetS.size();i++)
-				cout << i + 1 << g->sommetS[i].getPresentation() << endl;
-			cout << "Quel sommet?(Mettez l'entier avant le nom du sommet)";
-			int s;
-			cin >> s;
-			if (s > g->sommetS.size())
-				cout << "ERREUR" << endl;
-			else {
-				vector<Sommet> ajc = g->listeAjc(g->sommetS[s - 1]);
-				for (int i = 0;i < ajc.size();i++)
-				{
-					cout << ajc[i].getPresentation();
+			if (g->sommetS.size() > 0) {
+				for (int i = 0;i < g->sommetS.size();i++)
+					cout << i + 1 << " " << g->sommetS[i].getPresentation() << endl;
+				cout << "Quel sommet?(Mettez l'entier avant le nom du sommet)";
+				int s;
+				cin >> s;
+				if (s > g->sommetS.size())
+					cout << "ERREUR" << endl;
+				else {
+					vector<Sommet> ajc = g->listeAjc(g->sommetS[s - 1]);
+					for (int i = 0;i < ajc.size();i++)
+					{
+						cout << ajc[i].getPresentation();
+					}
+					cout << "" << endl;
 				}
-				cout << "" << endl;
 			}
+			else cout << "Il n'y a pas de sommet" << endl;
 			break;
 		}
 		default:
@@ -185,7 +197,7 @@ int main(int argc, char* argv[]) {
 				case 2: {
 					int s1, s2;
 					for (int i = 0;i < p->gr->sommetS.size();i++)
-						cout << i + 1 << p->gr->sommetS[i].getPresentation() << endl;
+						cout << i + 1 << " " << p->gr->sommetS[i].getPresentation() << endl;
 					cout << "Premiere tache?(Mettez l'entier avant le nom de la tache)";
 					cin >> s1;
 					cout << "Deuxieme tache?(Mettez l'entier avant le nom de la tache)";
