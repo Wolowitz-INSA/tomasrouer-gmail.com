@@ -1,3 +1,10 @@
+/*!
+ * \file Menu.cpp
+ * \brief le main qui permet l'utlisateur de faire des manipulations
+ * \author GroupeB7
+ * \version 0.1
+ */
+
 #include <iostream>
 #include "PbTSP.hpp"
 #include "PbTriTopologique.hpp"

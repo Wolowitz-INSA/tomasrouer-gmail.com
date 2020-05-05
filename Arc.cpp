@@ -1,3 +1,10 @@
+/*!
+ * \file Arc.cpp
+ * \brief implementation des methodes pour la classe Arc
+ * \author GroupeB7
+ * \version 0.1
+ */
+
 #include <iostream>
 #include <string>
 #include "Arc.hpp"

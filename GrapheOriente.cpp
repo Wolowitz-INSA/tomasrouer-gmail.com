@@ -1,3 +1,10 @@
+/*!
+ * \file GrapheOriente.cpp
+ * \brief implementation des methodes pour la classe GrapheOriente
+ * \author GroupeB7
+ * \version 0.1
+ */
+
 #include <iostream>
 #include "GrapheOriente.hpp"
 using namespace std;

@@ -68,8 +68,17 @@ public:
     bool getVisite();
 
     void setVisite(bool v);
-
+    /*!
+     *  \brief Redefinir l'operateur = pour la classe Sommet
+     *
+     *  On fera une photocopie de s
+     */
     void operator= (const Sommet & s);
+    /*!
+     *  \brief Redefinir l'operateur == pour la classe Sommet
+     *
+     *  On compare notre sommet avec le sommet s 
+     */
     bool operator==(const Sommet& s);
     };
 

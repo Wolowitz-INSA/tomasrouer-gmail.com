@@ -1,3 +1,10 @@
+/*!
+ * \file PbTriTopologique.cpp
+ * \brief implementation des methodes pour la classe PbTriTopologique
+ * \author GroupeB7
+ * \version 0.1
+ */
+
 #include <iostream>
 #include "PbTriTopologique.hpp"
 using namespace std;

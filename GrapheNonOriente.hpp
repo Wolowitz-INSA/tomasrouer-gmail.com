@@ -12,6 +12,7 @@
 
     /*! \class GrapheNonOriente
      * \brief classe representant le graphe non oriente
+     *  Sous-classe de Classe Graphe
      */
     class GrapheNonOriente : public Graphe
     {

@@ -1,3 +1,10 @@
+/*!
+ * \file Sommet.cpp
+ * \brief implementation des methodes pour la classe Sommet
+ * \author GroupeB7
+ * \version 0.1
+ */
+
 #include <iostream>
 #include <string>
 #include "Sommet.hpp"

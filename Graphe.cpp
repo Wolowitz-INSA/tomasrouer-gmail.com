@@ -1,3 +1,10 @@
+/*!
+ * \file Graphe.cpp
+ * \brief implementation des methodes pour la classe Graphe
+ * \author GroupeB7
+ * \version 0.1
+ */
+
 #include <iostream>
 #include <string>
 #include "Graphe.hpp"

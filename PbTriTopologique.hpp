@@ -9,7 +9,7 @@
  */
 #include "GrapheOriente.hpp"
 
-    /*! \class PbTritopologique
+    /*! \class PbTriTopologique
      * \brief classe representant un probleme a pour but de 
      * trier une liste a partir des relations
      */
@@ -26,7 +26,7 @@
         /*!
          *  \brief Constructeur
          *
-         *  Constructeur de la classe PbTritopologique
+         *  Constructeur de la classe PbTriTopologique
          *
          */
         PbTriTopologique();

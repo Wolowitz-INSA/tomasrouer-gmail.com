@@ -1,3 +1,10 @@
+/*!
+ * \file PbTSP.cpp
+ * \brief implementation des methodes pour la classe PbTSP
+ * \author GroupeB7
+ * \version 0.1
+ */
+
 #include <iostream>
 #include "PbTSP.hpp"
 #define max 999999

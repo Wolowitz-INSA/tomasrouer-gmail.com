@@ -22,7 +22,7 @@ PbTriTopologique.o : PbTriTopologique.cpp Arc.hpp Sommet.hpp Graphe.hpp GrapheOr
 PbTSP.o: PbTSP.cpp Arc.hpp Sommet.hpp Graphe.hpp GrapheNonOriente.hpp PbTSP.hpp
 	g++ -c PbTSP.cpp
 
-Menu.o: Menu.cpp Arc.hpp Sommet.hpp Graphe.hpp GrapheOriente.hpp PbTriTopologique.hpp GrapheNonOriente.hpp PbTSP.hpp Menu.hpp
+Menu.o: Menu.cpp Arc.hpp Sommet.hpp Graphe.hpp GrapheOriente.hpp PbTriTopologique.hpp GrapheNonOriente.hpp PbTSP.hpp
 	g++ -c Menu.cpp
 
 clean:
