@@ -33,9 +33,11 @@ void grapheManipulation(Graphe* g)
 		switch (choix2) {
 		case 9: break;
 		case 1: {
-			string nom;
-			cout << "Le nom du sommet:(longueur maximale du nom :3)";
-			cin >> nom;
+			string nom="";
+			while (nom.size() > 3 || nom.size() == 0) {
+				cout << "Le nom du sommet:(longueur maximale du nom :3)";
+				cin >> nom;
+			}
 			Sommet* s = new Sommet(nom);
 			g->ajouterSommet(*s);
 			break;
@@ -187,9 +189,12 @@ int main(int argc, char* argv[]) {
 				switch (choixtt) {
 				case 4: return 0;
 				case 1: {
-					string nom;
-					cout << "Le nom de la tache:";
-					cin >> nom;
+					string nom="";
+					while (nom.size() > 3 || nom.size() == 0)
+					{
+						cout << "Le nom de la tache:(longueur maximale du nom :3)";
+						cin >> nom;
+					}
 					Sommet* s = new Sommet(nom);
 					p->gr->ajouterSommet(*s);
 					break;
